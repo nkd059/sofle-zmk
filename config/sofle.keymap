@@ -93,6 +93,30 @@
             tapping-term-ms = <250>;
             bindings = <&kp N5>, <&kp RS(N5)>, <&kp RA(N5)>;
         };
+
+        dt_6: dt_6 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DT_6";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp N6>, <&kp RS(N6)>, <&kp RA(N6)>;
+        };
+
+        dt_7: dt_7 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DT_7";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp N7>, <&kp RS(N7)>, <&kp RA(N7)>;
+        };
+
+        dt_8: dt_8 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DT_8";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp N8>, <&kp RS(N8)>, <&kp RA(N8)>;
+        };
     };
 
     macros {
@@ -225,7 +249,7 @@
         MAC_Indian_express: MAC_Indian_express {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0>, <&macro_tap_time 400>, <&to 3>;
+            bindings = <&bt BT_SEL 0>, <&macro_wait_time 400>, <&to 3>;
 
             label = "MAC_INDIAN_EXPRESS";
         };
