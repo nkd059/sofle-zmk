@@ -282,7 +282,9 @@
                       &kp LS(LEFT_CONTROL)  &kp LEFT_SHIFT  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI    &kp SPACE  &mo 2   &kp RCTRL  &kp RALT   &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings =
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
+                <&inc_dec_kp PG_UP PG_DN>;
         };
 
         lower_layer {
@@ -326,21 +328,21 @@
 
         Indian_Express {
             bindings = <
-&dt_1   &dt_2   &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&dt_3   &dt_4   &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&dt_5   &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &mo 1   &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&dt_1  &dt_2  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&dt_3  &dt_4  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&dt_5  &dt_6  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&dt_7  &dt_8  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+              &trans  &trans  &mo 1   &trans  &trans    &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         Prodrafts {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &mo 1   &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans         &trans       &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &mo 1   &kp LG(LS(Z))  &kp LG(Z)    &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
