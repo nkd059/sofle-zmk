@@ -10,7 +10,222 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    keymap {
+combos {
+        compatible = "zmk,combos";
+
+        combo_capsw {
+            timeout-ms = <50>;
+            key-positions = <16 19>;
+            bindings = <&caps_word>;
+        };
+
+        combo_bootl {
+            timeout-ms = <50>;
+            key-positions = <0 1 2>;
+            bindings = <&bootloader>;
+        };
+
+        combo_reset {
+            timeout-ms = <50>;
+            key-positions = <10 11 12>;
+            bindings = <&sys_reset>;
+        };
+    };
+
+    behaviors {
+        rot_td: rot_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp C_PP>, <&kp C_NEXT>, <&kp C_PREV>;
+        };
+
+        ble_encoder: ble_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&bt BT_NXT>, <&bt BT_PRV>;
+        };
+
+        dt_1: dt_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DT_1";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp N0>, <&kp RS(N0)>, <&kp RA(N0)>;
+        };
+
+        dt_2: dt_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DT_2";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp NUMBER_2>, <&kp RS(NUMBER_2)>, <&kp RA(NUMBER_2)>;
+        };
+
+        dt_3: dt_3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DT_3";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp NUMBER_3>, <&kp RS(NUMBER_3)>, <&kp RA(NUMBER_3)>;
+        };
+
+        dt_0: dt_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DT_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp N0>, <&kp RS(N0)>, <&kp RA(N0)>;
+        };
+
+        dt_4: dt_4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DT_4";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp NUMBER_4>, <&kp RS(NUMBER_4)>, <&kp RA(NUMBER_4)>;
+        };
+
+        dt_5: dt_5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DT_5";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp N5>, <&kp RS(N5)>, <&kp RA(N5)>;
+        };
+    };
+
+    macros {
+        Craft_insert_new_Drawing: Craft_insert_new_Drawing {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp I &kp N &kp S &kp E &kp R &kp T &kp SPACE &kp N &kp E &kp W &kp SPACE &kp D &kp R &kp A &kp W &kp I &kp N &kp G &kp RET>;
+            label = "CRAFT_INSERT_NEW_DRAWING";
+        };
+
+        Craft_Red: Craft_Red {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp R &kp E &kp D &kp RET>;
+            label = "CRAFT_RED";
+        };
+
+        Craft_Orange: Craft_Orange {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp O &kp R &kp A &kp N &kp G &kp E &kp RET>;
+            label = "CRAFT_ORANGE";
+        };
+
+        Craft_pink: Craft_pink {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp P &kp I &kp N &kp K &kp RET>;
+            label = "CRAFT_PINK";
+        };
+
+        Craft_brown: Craft_brown {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp B &kp R &kp O &kp W &kp N &kp RET>;
+            label = "CRAFT_BROWN";
+        };
+
+        Craft_Purple: Craft_Purple {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp P &kp U &kp R &kp P &kp L &kp E &kp RET>;
+            label = "CRAFT_PURPLE";
+        };
+
+        craft_olive: craft_olive {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp O &kp L &kp I &kp V &kp E &kp RET>;
+            label = "CRAFT_OLIVE";
+        };
+
+        craft_Default_color: craft_Default_color {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp D &kp E &kp F &kp A &kp U &kp L &kp T &kp SPACE &kp C &kp O &kp L &kp O &kp R &kp RET>;
+            label = "CRAFT_DEFAULT_COLOR";
+        };
+
+        craft_grey: craft_grey {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp G &kp R &kp E &kp Y &kp RET>;
+            label = "CRAFT_GREY";
+        };
+
+        craft_light_grey: craft_light_grey {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp L &kp I &kp G &kp H &kp T &kp SPACE &kp G &kp R &kp E &kp Y &kp RET>;
+            label = "CRAFT_LIGHT_GREY";
+        };
+
+        craft_navy_blue: craft_navy_blue {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp N &kp A &kp V &kp Y &kp SPACE &kp B &kp L &kp U &kp E &kp RET>;
+            label = "CRAFT_NAVY_BLUE";
+        };
+
+        craft_ocean_blue: craft_ocean_blue {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp O &kp C &kp E &kp A &kp N &kp SPACE &kp B &kp L &kp U &kp E &kp RET>;
+            label = "CRAFT_OCEAN_BLUE";
+        };
+
+        craft_green: craft_green {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp G &kp R &kp E &kp E &kp N &kp RET>;
+            label = "CRAFT_GREEN";
+        };
+
+        craft_table: craft_table {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp T &kp A &kp B &kp L &kp E>;
+            label = "CRAFT_TABLE";
+        };
+
+        craft_clear_style: craft_clear_style {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp C &kp L &kp E &kp A &kp R &kp SPACE &kp S &kp T &kp Y &kp L &kp I &kp N &kp G &kp RET>;
+            label = "CRAFT_CLEAR_STYLE";
+        };
+
+        Craft_page_break: Craft_page_break {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp P &kp A &kp G &kp E &kp SPACE &kp B &kp R &kp E &kp A &kp K>;
+            label = "CRAFT_PAGE_BREAK";
+        };
+
+        Craft_move_to: Craft_move_to {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp M &kp O &kp V &kp E &kp SPACE &kp T &kp O &kp RET>;
+            label = "CRAFT_MOVE_TO";
+        };
+
+        craft_image: craft_image {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp I &kp M &kp A &kp G &kp E>;
+            label = "CRAFT_IMAGE";
+        };
+    };
+
+
+
+keymap {
         compatible = "zmk,keymap";
 
         default_layer {
@@ -23,7 +238,7 @@
 
             bindings = <
 &kp N0        &kp NUMBER_1  &kp N2                &kp N3          &to 2      &kp N5                                   &kp N6  &kp N7     &kp N8     &kp N9    &kp N0    &none
-&kp NUMBER_6  &kp Q         &kp W                 &kp E           &kp R      &kp T                                    &kp Y   &kp U      &kp I      &kp O     &kp P     &kp BSPC
+&kp N6        &kp Q         &kp W                 &kp E           &kp R      &kp T                                    &kp Y   &kp U      &kp I      &kp O     &kp P     &kp BSPC
 &kp N7        &kp A         &kp S                 &kp D           &kp F      &kp G                                    &kp H   &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
 &kp N8        &kp Z         &kp X                 &kp C           &kp V      &kp B         &kp C_MUTE      &none      &kp N   &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
                             &kp LS(LEFT_CONTROL)  &kp LEFT_SHIFT  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI    &kp SPACE  &mo 2   &kp RCTRL  &kp RALT   &kp RGUI
